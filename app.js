@@ -25,9 +25,7 @@ nunjucks.configure('views', {
 app.use(volleyball);
 
 
-models.sync({
-    force: true
-  })
+models.sync()
   .then(() => {
     app.listen(3000, () => {
       console.log('listening on port 3000');
@@ -36,11 +34,7 @@ models.sync({
 
 app.use(express.static(path.join(__dirname, '.public')));
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
-
-//app.use('/', router);
+app.use('/', router);
 
 app.use((req, res, next) => {
   var err = new Error('Not Found');
