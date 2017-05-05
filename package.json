@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:production": "node app.js",
+    "start:dev": "nodemon -e html,css,js app.js",
+    "start": "npm run start:dev",
+    "build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +24,9 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.30.4",
     "volleyball": "^1.4.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.2",
+    "sass": "^0.5.0"
   }
 }
