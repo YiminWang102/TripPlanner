@@ -15,7 +15,7 @@ const Restaurant = db.define('restaurant', {
     allowNull: false,
     validate: {
       min: 1,
-      max: 2
+      max: 5
     }
   }
 });

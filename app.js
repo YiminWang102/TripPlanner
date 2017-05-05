@@ -25,7 +25,7 @@ nunjucks.configure('views', {
 app.use(volleyball);
 
 
-models.db.sync({
+models.sync({
     force: true
   })
   .then(() => {
