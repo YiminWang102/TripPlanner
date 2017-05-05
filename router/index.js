@@ -10,7 +10,6 @@ module.exports = router;
 
 
 router.get('/', function(req, res, next){
-  // var outerScopeContainer = {}
   var hotelPromise = Hotel.findAll();
   var restaurantPromise = Restaurant.findAll();
   var activityPromise = Activity.findAll();
